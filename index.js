@@ -1,9 +1,9 @@
 require('dotenv').config();
 const Discord = require('discord.js')
 
-const client = new Discord.Client({ intents: [Discord.IntentsBitField.Flags.MessageContent, Discord.IntentsBitField.Flags.GuildMessages, Discord.IntentsBitField.Flags.Guilds]})
+const client = new Discord.Client({ intents: [Discord.IntentsBitField.Flags.Guilds]})
 
-client.once("ready", () => {
+client.once(Discord.Events.ClientReady, () => {
     console.log("connected")
 })
 
